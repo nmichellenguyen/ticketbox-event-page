@@ -1,0 +1,27 @@
+<div>
+    <h1>
+        Add an event here
+    </h1>
+    <h2>
+        {% for field, errors in form.errors.items() %}
+        <div class="alert alert-error">
+            {{ form[field].label }}: {{ ', '.join(errors) }}
+        </div>
+        {% endfor %}
+    </h2>
+        <form method='POST'>
+            {{ form.hidden_tag()}}
+            {{ form.description.label}} {{form.description()}}
+            <br/>
+            {{ form.organizer.label}} {{form.organizer()}}
+            <br/>
+            {{ form.venue.label}} {{form.venue()}}
+            <br/>
+            {{ form.start_time.label}} {{form.start_time()}}
+            <br/>
+            {{ form.end_time.label}} {{form.end_time()}}
+            <br/>
+            {{ form.submit()}}
+        </form>
+    
+</div>
